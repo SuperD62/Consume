@@ -1,0 +1,21 @@
+package super62.inicio.Events;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
+
+public class ClassEvents implements Listener {
+	
+	@EventHandler
+			public void onConsume (PlayerItemConsumeEvent event) {
+				Player player = event.getPlayer();
+				if(event.getItem().getType().equals(Material.GOLDEN_APPLE)){
+					if(player.getHealth() != 20);
+					player.setHealthScale(player.getHealthScale() +4);
+					player.sendMessage(ChatColor.GREEN + "Has obtenido: " + ChatColor.RED + "2 corazones extra");
+				}
+		}
